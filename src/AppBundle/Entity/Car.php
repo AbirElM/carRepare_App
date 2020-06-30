@@ -12,6 +12,49 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Car
 {
+
+    /**
+     * @ORM\Column(type="string",length=100)
+     */
+    private $ownerFN;
+    /**
+     * @ORM\Column(type="string",length=100)
+     */
+    private $ownerLN;
+
+    /**
+     * @return mixed
+     */
+    public function getOwnerFN()
+    {
+        return $this->ownerFN;
+    }
+
+    /**
+     * @param mixed $ownerFN
+     */
+    public function setOwnerFN($ownerFN)
+    {
+        $this->ownerFN = $ownerFN;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOwnerLN()
+    {
+        return $this->ownerLN;
+    }
+
+    /**
+     * @param mixed $ownerLN
+     */
+    public function setOwnerLN($ownerLN)
+    {
+        $this->ownerLN = $ownerLN;
+    }
+
+
     /**
      * @var int
      *
@@ -49,6 +92,11 @@ class Car
      */
     private $state;
 
+    /**
+     * @ORM\Column(type="string",length=10)
+     */
+
+    private $cin;
 
     /**
      * Get id
@@ -73,6 +121,7 @@ class Car
 
         return $this;
     }
+
 
     /**
      * Get license
@@ -120,6 +169,23 @@ class Car
         $this->year = $year;
 
         return $this;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getCin()
+    {
+        return $this->cin;
+    }
+
+    /**
+     * @param mixed $cin
+     */
+    public function setCin($cin)
+    {
+        $this->cin = $cin;
     }
 
     /**
